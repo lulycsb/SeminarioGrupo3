@@ -1,0 +1,799 @@
+<html>
+  <head>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@401,500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <title>Seminário de História apresentado pelo Grupo 3</title>
+    <style>
+      :root{
+        --c1:#000;
+        --c2:#fff;
+        --c3:#2bc7b9;
+        --c4:#1e1f26;
+        --c5:#16171c;
+        --c6:#95a5a6;
+        --c7:#ff00e1;
+        --c8:#e29e29;
+        --c9:#2c2d37;
+        --char-index: '400s';    
+        --dim:30px;
+        --border-radius-5: 1.4rem;
+      }  
+
+      ::-webkit-scrollbar {
+        width: 2px;
+        background-color: #ffffff;
+      }
+      ::-webkit-scrollbar-button {
+        display:none;
+        background-color: rgba(255, 255, 255, .2);
+      }
+      ::-webkit-scrollbar-thumb {
+        height: 50px;
+        background-color: #2bc7b9;
+      }
+
+      .scroll-indicator {
+        z-index:12;
+        position: fixed;
+        top: 50%;
+        transform:translateY(-50%);
+        left: 10px;
+        width: 2px;
+        height: 40vh;
+        background-color: lightgray;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        transition: all .5s ease;
+        overflow: visible;
+      }
+
+      .scroll-segment {
+        flex: 1;
+        background-color: #ddd; 
+        transition: all .5s ease;
+      }
+
+      .scroll-segment.active {
+        transition: all .5s ease;
+        width:8px;
+        background-color: var(--c3);
+      }
+
+      html {
+        scroll-snap-type: mandatory;
+        scroll-snap-points-y: repeat(100vh);
+        scroll-snap-type: y mandatory;
+      }
+
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        color:#000;
+        background:#000;
+        user-select:none;          
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        scroll-snap-align:start;
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        right:0;
+        left:0;
+        overflow: hidden;
+        /*        
+        border:solid 1px #2bc7b9;
+        */     
+      }
+      
+      ._number {
+        font-family: 'Satoshi', sans-serif;
+        font-size:15rem;
+        opacity:.5;
+        color:cyan;
+        position:absolute;
+        /*        
+        top:0;
+        left:0;
+        transform:translate(-50%,-50%);
+        */
+      }
+      
+      .image-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        overflow:hidden;
+      }
+      .__0 {
+     background-image: url("https://img.freepik.com/fotos-gratis/vista-superior-da-variedade-de-simbolos-religiosos_23-2148629990.jpg?t=st=1718571083~exp=1718574683~hmac=6d01764741f02566e9eee25878ce2d5926278f390891bbf73e68908a538ad50e&w=740");
+      }
+      .__1 {
+
+        background-image: url("https://img.freepik.com/fotos-premium/um-homem-com-barba-e-um-grupo-de-pessoas-a-sorrir_1085346-36219.jpg?w=740");
+      }            
+      .__2 {
+
+        background-image: url("https://img.freepik.com/fotos-premium/um-homem-com-barba-e-um-grupo-de-pessoas-a-sorrir_1085346-36219.jpg?w=740");
+      }            
+
+      .__3 {
+        background-image: url("https://img.freepik.com/fotos-premium/um-homem-com-barba-e-um-grupo-de-pessoas-a-sorrir_1085346-36219.jpg?w=740");
+      }            
+
+      .__4 {
+        background-image: url("https://img.freepik.com/fotos-premium/um-homem-com-barba-e-um-grupo-de-pessoas-a-sorrir_1085346-36219.jpg?w=740");
+      }
+
+      .__5 {
+        background-image: url("https://img.freepik.com/fotos-premium/um-homem-com-barba-e-um-grupo-de-pessoas-a-sorrir_1085346-36219.jpg?w=740");
+      }
+
+      .__6 {
+        background-image: url("https://img.freepik.com/fotos-premium/um-homem-com-barba-e-um-grupo-de-pessoas-a-sorrir_1085346-36219.jpg?w=740");
+      }
+
+      .__7 {
+        background-image: url("https://img.freepik.com/fotos-premium/um-homem-com-barba-e-um-grupo-de-pessoas-a-sorrir_1085346-36219.jpg?w=740");
+      }
+
+      .__8 {
+        background-image: url("https://img.freepik.com/fotos-premium/um-homem-com-barba-e-um-grupo-de-pessoas-a-sorrir_1085346-36219.jpg?w=740");
+      }
+
+      .__9 {
+        background-image: url("https://img.freepik.com/fotos-premium/um-homem-com-barba-e-um-grupo-de-pessoas-a-sorrir_1085346-36219.jpg?w=740");
+      }
+
+      .__10 {
+        background-image: url("https://img.freepik.com/fotos-premium/um-homem-com-barba-e-um-grupo-de-pessoas-a-sorrir_1085346-36219.jpg?w=740");
+      }
+
+      .__11 {
+        background-image: url("https://img.freepik.com/fotos-premium/um-homem-com-barba-e-um-grupo-de-pessoas-a-sorrir_1085346-36219.jpg?w=740");
+      }
+
+      .__12 {
+        background-image: url("https://img.freepik.com/fotos-premium/um-homem-com-barba-e-um-grupo-de-pessoas-a-sorrir_1085346-36219.jpg?w=740");
+      }
+
+      .__13 {
+        background-image: url("https://img.freepik.com/fotos-premium/um-homem-com-barba-e-um-grupo-de-pessoas-a-sorrir_1085346-36219.jpg?w=740");
+      }
+
+      .__14 {
+        background-image: url("https://img.freepik.com/fotos-premium/um-homem-com-barba-e-um-grupo-de-pessoas-a-sorrir_1085346-36219.jpg?w=740");
+      }
+      .image-wrapper img {
+
+        width: 90vw;
+        height: auto;
+        max-width: 95vw;
+        max-height: 60%;
+        min-width: 80%;
+        max-height: auto;
+        /*
+        filter: contrast(1.2) saturate(1.3) url(#distort);
+        */
+        filter: contrast(1.2) saturate(1.3);
+        transition: transform 0.5s ease-in-out; 
+        border-radius: var(--border-radius-5);
+        /* Add transition for parallax effect */
+      }
+
+      .scroll-content {
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        text-align: center;
+        width: 80%;
+        color: white;
+        border:solid 2px #2bc7b9;
+        border-radius:var(--border-radius-5);  
+        /*
+        filter: url(#distort);
+        */
+      }
+
+      .scroll-content h2 {
+        font-family: 'Satoshi', sans-serif;
+        font-size: 3rem;
+        padding:1rem;
+        margin:0;
+        border-radius:var(--border-radius-5) var(--border-radius-5) 0rem 0rem;
+        background:rgba(0,0,0,0.2);
+        backdrop-filter:blur(4px);
+      }
+
+      .scroll-content h5 {
+        font-family: 'Satoshi', sans-serif;
+        font-size: 2rem;
+        padding:1rem;
+        margin:0;
+        border-radius:0rem 0rem 0rem 0rem;
+        background:rgba(0,0,0,0.2);
+        backdrop-filter:blur(7px);
+        border-top:solid 1px #2bc7b9;
+        border-bottom:solid 1px #2bc7b9;
+      }
+
+      .scroll-content p {
+        /*
+        display:none;
+        */
+        font-family: 'Satoshi', sans-serif;
+        font-weight:401;
+        font-size: 1.2rem;
+        padding:2rem;
+        margin:0;
+        border-radius:0rem 0rem var(--border-radius-5) var(--border-radius-5);
+        background:rgba(0,0,0,0.2);
+        backdrop-filter:blur(7px);
+      }
+
+      /* SVG Filter */
+      #distort {
+        filterUnits: objectBoundingBox;
+        transition: baseFrequency 0.5s ease-in-out; 
+        /* Add transition for filter animation */
+      }
+
+      .splitting .char {
+        -webkit-transition: all 0.3s linear , -webkit-transform 0.3s cubic-bezier(0.3, 0, 0.3, 1) ;
+        transition: all 0.3s linear , -webkit-transform 0.3s cubic-bezier(0.3, 0, 0.3, 1) ;
+        transition: transform 0.3s cubic-bezier(0.3, 0, 0.3, 1) , all 0.3s linear ;
+        transition: transform 0.3s cubic-bezier(0.3, 0, 0.3, 1) , all 0.3s linear , -webkit-transform 0.3s cubic-bezier(0.3, 0, 0.3, 1) ;
+        -webkit-transition-delay: calc( 20ms * var(--char-index) );
+        transition-delay: calc( 20ms * var(--char-index) );
+        text-shadow:0 0 2rem rgba(255, 255, 255, .5);
+      }
+      .splitting[data-scroll="out"] .char {
+        all: 0.1;
+        color:var(--c7);
+        opacity: 0;
+        -webkit-transform: translateY(0.25em) rotateY(90deg) rotateX(90deg);
+        transform: translateY(0.25em) rotateY(90deg) rotateX(90deg);
+        -webkit-transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+        transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+      }
+      ._title .char,
+      ._subtitle .char,
+      ._text .char{
+        -webkit-transition: color 0.4s linear;
+        transition: color 0.4s linear;
+        -webkit-transition-delay: calc( 0.045s * var(--char-index) );
+        transition-delay: calc( 0.045s * var(--char-index) );
+      }
+      ._title:hover,
+      ._text:hover
+      {
+        color: var(--c7);
+        text-shadow:0 0 2rem rgba(255, 255, 255, 0.5);
+      }
+      ._subtitle:hover
+      {
+        color: var(--c3);
+        text-shadow:0 0 2rem rgba(255, 255, 255, 1);
+      }
+
+      .btn-fullscreen svg path{
+        fill:var(--c2);
+        fill-opacity: 1;
+      }
+      .btn-fullscreen{
+        mix-blend-mode: difference;
+        top:40px;
+        right: var(--dim);
+        position: fixed;
+        z-index: 3200;
+        transition: all 1s ease-in-out;
+      }
+      .infos {
+        position:fixed;
+        font-family: Arial, sans-serif;
+        color:whitesmoke;
+        font-size:14px;
+        margin:1rem;
+      }
+      #info_1 {
+        top:var(--dim);
+        left:var(--dim);  
+      }
+
+      #info_3 {
+        bottom:var(--dim);
+        left:var(--dim);  
+        & a {
+          color:#fff;
+          text-decoration:none;
+        }
+      }
+      #logo-codepen {
+        position: fixed;
+        bottom:var(--dim);
+        width:var(--dim);
+        right:var(--dim);
+        height:var(--dim);
+        & svg path {
+          transition:all 2s ease;
+          stroke:#fff;
+        }
+        &:hover svg path {
+          stroke:#2bc7b9;
+        }
+      }
+      sup {
+        font-size:1.1rem;
+      }
+
+/* Menu styles */
+#toggle {
+  display: block;
+  width: 28px;
+  height: 30px;
+  margin: 30px auto 10px;
+}
+
+#toggle span:after,
+#toggle span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -9px;
+}
+#toggle span:after{
+  top: 9px;
+}
+#toggle span {
+  position: relative;
+  display: block;
+}
+
+#toggle span,
+#toggle span:after,
+#toggle span:before {
+  width: 100%;
+  height: 5px;
+  background-color: #888;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  border-radius: 2px;
+}
+
+/* on activation */
+#toggle.on span {
+  background-color: transparent;
+}
+#toggle.on span:before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+#toggle.on span:after {
+  transform: rotate(-45deg) translate(7px, -8px);
+}
+#toggle.on + #menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* menu appearance*/
+#menu {
+  position: relative;
+  color: #999;
+  width: 200px;
+  padding: 10px;
+  margin: auto;
+  font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+  text-align: center;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  /* just for this demo */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .4s;
+}
+#menu:after {
+  position: absolute;
+  top: -15px;
+  left: 95px;
+  content: "";
+  display: block;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 20px solid white;
+}
+ul, li, li a {
+  list-style: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+li a {
+  padding: 5px;
+  color: #888;
+  text-decoration: none;
+  transition: all .2s;
+}
+li a:hover,
+li a:focus {
+  background: #1ABC9C;
+  color: #fff;
+}
+
+
+/* demo styles */
+body { margin-top: 3em; background: #eee; color: #555; font-family: "Open Sans", "Segoe UI", Helvetica, Arial, sans-serif; }
+p, p a { font-size: 12px;text-align: center; color: #888; }
+
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+    </style>
+  </head>
+  <body>
+
+    <div class="scroll-indicator"></div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+      <defs>
+        <filter id="distort">
+
+          <!--   baseFrequency=".02" numOctaves="1" />
+        <feDisplacementMap in="SourceGraphic" scale="240" />
+-->
+          <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="1" seed="10" result="turbulence"/>
+          <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="60" xChannelSelector="R" yChannelSelector="G" result="distorted"/>
+          <feMerge>
+            <feMergeNode in="distorted"/>
+            <!--            <feMergeNode in="SourceGraphic"/> -->
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
+
+    <div class='btn-fullscreen' id='fullscreen-mode'>
+      <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' focusable='false' width='1.4em' height='1.4em' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 17 17'>
+        <g fill='' fill-rule='evenodd'>
+          <path d='M3 5h12v8H3z'/>
+          <path d='M3.918 14.938H1v-2.876h1v1.98h1.918v.896z'/>
+          <path d='M17 14.938h-2.938v-.896H16v-1.984h1v2.88z'/>
+          <path d='M17 5.917h-1v-1.95h-1.943v-.946H17v2.896z'/>
+          <path d='M2 5.938H1V3h2.938v.938H2v2z'/>
+        </g>
+      </svg>
+    </div>
+
+    
+     <div class="container">
+<!-- The video -->
+<video autoplay muted loop id="myVideo">
+  <source src="https://videos.pexels.com/video-files/3808573/3808573-hd_1280_720_25fps.mp4" type="video/mp4">
+</video>
+
+       <div class="image-wrapper __">
+    <!-- <img src="https://img.freepik.com/fotos-gratis/oracao-espiritual-maos-sol-brilhar-com-obscurecido-bonito-por-do-sol_1150-7173.jpg?t=st=1718247544~exp=1718251144~hmac=a4c754bcd69d6e8ddd1f9133ee14c5109024bdbd9f1e0fbd58d41e4bc8606f6e&w=740" alt="Image 1"> -->
+      </div>
+
+<!-- menu -->
+<a href="#menu" id="toggle"><span></span></a>
+<div id="menu">
+  <ul>
+    <li><a href="index.html" #home>Home</a></li>
+    <!-- <li><a href="histmod5.html" #home>História - Módulo 5</a></li> -->
+    <li><a href="histmod6.html" #about>História - Módulo 6</a></li>
+    <li><a href="geomod7.html" #contact>Geografia - Módulo 7</a></li>
+  </ul>
+</div>
+
+        <div class="scroll-content">
+          
+        <div class="_number"></div>
+        <h2 class="_title" data-splitting ><br><span>HISTÓRIA - MÓDULO 5</span><br>
+        <h5 class="_subtitle" data-splitting >RELIGIÕES MONOTEÍSTAS</h5>
+        <h5 class="_text" data-splitting ><sup>Colégio Anglo - Turma: 5º Ano B PROFESSORA IVANICE</sup></h5>
+      </div>
+    </div>
+    
+    
+    <div class="container">
+      <div class="image-wrapper __0">
+    <img src="https://img.freepik.com/fotos-gratis/vista-superior-da-variedade-de-simbolos-religiosos_23-2148629990.jpg?t=st=1718571083~exp=1718574683~hmac=6d01764741f02566e9eee25878ce2d5926278f390891bbf73e68908a538ad50e&w=740" alt="Image 1">
+      </div>
+        <div class="scroll-content">
+        <div class="_number">01</div>
+        <h2 class="_title" data-splitting ><br><span>RELIGIÕES MONOTEÍSTAS</span><br>
+        <h5 class="_subtitle" data-splitting >COMO SÃO CARACTERIZADAS?</h5>
+        <h5 class="_text" data-splitting >Caracterizam-se pela crença em uma única divindade.</h5>
+      </div>
+    </div>
+
+    
+  <div class="container">
+      <div class="image-wrapper __2">
+        <!-- Botar a url de uma imagem aqui, caso necessário -->
+      </div>
+        <div class="scroll-content">
+        <div class="_number">02</div>
+        <h2 class="_title" data-splitting ><br><span>JUDAÍSMO</span><br></h2>
+        <h5 class="_subtitle" data-splitting >Características:</h5>
+        <h5 class="_text" data-splitting >- Origem ligada ao povo Hebreu que vivia na região da Mesopotâmia
+        <br>
+          - Não acreditavam em vários deuses;
+        <br>
+         - Regras e histórias escritas na Torá;
+         <br>
+         - Sinagoga é o nome do seu templo;
+         <br>
+         - Cerimônias conduzidas por rabinos
+          <br>
+        - Tradições: Circuncisão e Bar Mitzvah;
+        </h5>
+      </div>
+    </div>
+
+  
+      
+    <div class="container">
+<!-- The video -->
+    <!-- <video autoplay muted loop id="myVideo">
+      <source src="https://videos.pexels.com/video-files/3808593/3808593-hd_1280_720_25fps.mp4" type="video/mp4">
+    </video> -->
+
+      
+      <div class="image-wrapper __3">
+      </div>
+        <div class="scroll-content">
+        <div class="_number">03</div>
+        <h2 class="_title" data-splitting ><br><span>CRISTIANISMO</span><br></h2>
+        <h5 class="_subtitle" data-splitting >CARACTERÍSTICAS PRINCIPAIS:</h5>
+      <h5 class="_text" data-splitting >- Baseia-se na história de Jesus, o filho de Deus;
+        <br>
+        - O livro sagrado é a Bíblia;
+        <br>
+        - Subdividiu-se em catolicismo, igreja ortodoxa e protestantismo;
+        <br>
+        - Reúnem-se em igrejas ou capelas;
+        <br>
+        - Líderes: padres, pastores, bispos, papa, etc.
+      </h5>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="image-wrapper __4">
+    <!--<img src="https://img.freepik.com/fotos-premium/um-homem-com-barba-e-um-grupo-de-pessoas-a-sorrir_1085346-36219.jpg?w=740" alt="Image 1">-->
+      </div>
+        <div class="scroll-content">
+        <div class="_number">04</div>
+        <h2 class="_title" data-splitting ><br><span>ISLAMISMO</span><br>
+        <h5 class="_subtitle" data-splitting >CARACTERÍSTICAS:</h5>
+        <h5 class="_text" data-splitting >- Maomé recebeu mensagens de Alá, o único Deus, através do anjo Gabriel;
+          <br>
+          - Após o encontro, Maomé organizou o Alcorão, o livro sagrado;
+          <br>
+          - Os templos se chamam MESQUITAS;
+          <br>
+          - Seus adeptos chamam-se muçulmanos;
+          <br>
+          - Tem 5 pilares: fé, oração, caridade, jejum, peregrinação.
+        </h5>
+      </div>
+    </div>
+  
+    <div class="container">
+      <div class="image-wrapper __5">
+    <!--<img src="https://img.freepik.com/fotos-premium/um-homem-com-barba-e-um-grupo-de-pessoas-a-sorrir_1085346-36219.jpg?w=740" alt="Image 1">-->
+      </div>
+        <div class="scroll-content">
+        <div class="_number">05</div>
+        <h2 class="_title" data-splitting ><br><span>CARACTERÍSTICAS EM COMUM</span><br>
+        <h5 class="_subtitle" data-splitting >CRISTIANISMO E ISLAMISMO TEM SUAS ORIGENS NO JUDAÍSMO</h5>
+        <h5 class="_text" data-splitting >- Pregam o cuidado com o próximo e a realização de boas ações;
+          <br>
+          - A cidade de Jerusalém é considerada sagrada para essas 3 crenças.
+        </h5>
+      </div>
+    </div>
+
+    
+
+    <div class="container">
+      <div class="image-wrapper __">
+    <!--<img src="https://img.freepik.com/fotos-premium/um-homem-com-barba-e-um-grupo-de-pessoas-a-sorrir_1085346-36219.jpg?w=740" alt="Image 1">-->
+      </div>
+      
+<!-- menu -->
+<a href="#menu" id="toggle"><span></span></a>
+
+<div id="menu">
+  <ul>
+    <li><a href="index.html" #home>Home</a></li>
+    <!-- <li><a href="histmod5.html" #home>História - Módulo 5</a></li> -->
+    <li><a href="histmod6.html" #about>História - Módulo 6</a></li>
+    <li><a href="geomod7.html" #contact>Geografia - Módulo 7</a></li>
+  </ul>
+</div>
+      
+        <div class="scroll-content">
+        <div class="_number">06</div>
+        <h2 class="_title" data-splitting ><br><span>FIM!</span><br>
+        <h5 class="_subtitle" data-splitting >Obrigado!</h5>
+        <p class="_text" data-splitting ></p>
+      </div>
+    </div>
+
+
+  
+        <div class="infos" id="info_1">#AngloACRE - DESENVOLVIDO POR: ANA LUÍSA </div>
+    <div class="infos" id="info_3"><a href="https://unsplash.com/fr/@trapnation" target="_blank">baseado no código de: unsplash.com/fr/@trapnation</a></div>
+
+    <div id="logo-codepen"><a href="https://codepen.io/lulycsb" target="_blank"><svg  width="240" height="240" xmlns="http://www.w3.org/2000/svg" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.3" stroke="#ffdd40" fill="none" viewbox="0 0 240 240"><g><title>codepen.io/lulycsb</title><path stroke="null" id="svg_1" d="m2.93024,15.06786l9.25581,6.374l9.25581,-6.374l0,-6.46131l-9.25581,-6.374l-9.25581,6.374l0,6.46131zm18.51163,0l-9.25581,-6.46131l-9.25581,6.46131m0,-6.46131l9.25581,6.374l9.25581,-6.374m-9.25581,-6.374l0,6.374m0,6.46131l0,6.374"/></g></svg></a></div>
+
+
+    <script src='https://unpkg.com/scroll-out/dist/scroll-out.min.js'></script>
+    <script src='https://unpkg.com/splitting/dist/splitting.js'></script>
+    <script>
+      window.addEventListener('scroll', function() {
+        const containers = document.querySelectorAll('.container');
+        containers.forEach(container => {
+          const rect = container.getBoundingClientRect();
+          const scrollPercentage = Math.max(0, Math.min(1, (rect.top + rect.height) / window.innerHeight));
+          const turbulenceFrequency = 0.01 + (scrollPercentage * 0.05);
+          const displacementScale = 10 + (scrollPercentage * 5);
+
+          const filter = container.querySelector('svg filter');
+          const turbulenceElement = filter.querySelector('feTurbulence');
+          const displacementElement = filter.querySelector('feDisplacementMap');
+
+          turbulenceElement.setAttribute('baseFrequency', turbulenceFrequency);
+          displacementElement.setAttribute('scale', displacementScale);
+
+          // Parallax effect
+          const parallaxOffset = scrollPercentage * 50; // Adjust multiplier for parallax strength
+          container.querySelector('.image-wrapper img').style.transform = `translateY(${parallaxOffset}px)`;
+
+          // Animate SVG filter
+          filter.style.baseFrequency = turbulenceFrequency;
+        });
+      });
+
+
+      const scrollIndicator = document.querySelector('.scroll-indicator');
+      const containers = document.querySelectorAll('.container');
+
+      function updateScrollIndicator() {
+        const scrollTop = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.body.scrollHeight;
+
+        const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+
+        containers.forEach((container, index) => {
+          const segment = scrollIndicator.children[index];
+          const containerTop = container.offsetTop-2;
+          const containerBottom = containerTop + container.offsetHeight;
+
+          if (scrollTop >= containerTop && scrollTop <= containerBottom) {
+            segment.classList.add('active');
+          } else {
+            segment.classList.remove('active');
+          }
+
+          segment.style.height = `${scrollPercentage}%`;
+        });
+      }
+
+      containers.forEach(() => {
+        const segment = document.createElement('div');
+        segment.classList.add('scroll-segment');
+        scrollIndicator.appendChild(segment);
+      });
+
+      window.addEventListener('scroll', updateScrollIndicator);
+
+      updateScrollIndicator();
+
+
+
+      //    document.getElementById("copyright-year").innerHTML = new Date().getFullYear();
+      Splitting();
+      ScrollOut({
+        targets: ['[data-splitting]._title','[data-splitting]._subtitle','[data-splitting]._text']
+      });
+
+      function toggleFullscreen(elem) {
+        elem = elem || document.documentElement;  
+        if (!document.fullscreenElement && !document.mozFullScreenElement &&
+            !document.webkitFullscreenElement && !document.msFullscreenElement) {        
+          if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+          } else if (elem.msRequestFullscreen) {
+            elem.msRequestFullscreen();
+          } else if (elem.mozRequestFullScreen) {
+            elem.mozRequestFullScreen();
+          } else if (elem.webkitRequestFullscreen) {
+            elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+          }
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          }
+        }
+      }
+      document.getElementById('fullscreen-mode').addEventListener('click', function() {
+        toggleFullscreen();
+      });
+
+
+var theToggle = document.getElementById('toggle');
+
+// based on Todd Motto functions
+// https://toddmotto.com/labs/reusable-js/
+
+// hasClass
+function hasClass(elem, className) {
+	return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+}
+// addClass
+function addClass(elem, className) {
+    if (!hasClass(elem, className)) {
+    	elem.className += ' ' + className;
+    }
+}
+// removeClass
+function removeClass(elem, className) {
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+	if (hasClass(elem, className)) {
+        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+            newClass = newClass.replace(' ' + className + ' ', ' ');
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    }
+}
+// toggleClass
+function toggleClass(elem, className) {
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
+    if (hasClass(elem, className)) {
+        while (newClass.indexOf(" " + className + " ") >= 0 ) {
+            newClass = newClass.replace( " " + className + " " , " " );
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    } else {
+        elem.className += ' ' + className;
+    }
+}
+
+theToggle.onclick = function() {
+   toggleClass(this, 'on');
+   return false;
+}
+
+
+    </script>
+  </body>
+</html>
